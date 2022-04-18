@@ -1,0 +1,7 @@
+
+  :root {
+    --transition-bottle-falling: 0.5s;
+    --transition-bottle-delay: 0.7s;
+    --transition-water-rising: 1s;
+    --transition-water-rising-delay: 1.2s;
+  }
