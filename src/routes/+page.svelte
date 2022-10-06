@@ -8,6 +8,8 @@
 	import Content from '../components/Content.svelte';
 	import { onMount } from 'svelte';
 
+	export const prerender = true;
+
 	let tilt = false;
   let content;
   let nav;
