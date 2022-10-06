@@ -2,7 +2,9 @@
   export let tilt = false;
 	import { afterUpdate, onMount } from 'svelte';
 
+  /** @type {HTMLElement|null} */
   let bottle;
+  /** @type {HTMLElement|null} */
   let water;
 
 	onMount(() => {
@@ -13,16 +15,16 @@
   
 	afterUpdate(() => {
 		if (tilt) {
-      water.classList.add("delayed");
-      bottle.classList.remove("delayed");
+      water?.classList.add("delayed");
+      bottle?.classList.remove("delayed");
     } else {
-      bottle.classList.add("delayed");
-      water.classList.remove("delayed");
+      bottle?.classList.add("delayed");
+      water?.classList.remove("delayed");
     }
 	});
 </script>
 
-<svg viewBox="-2 -5 70 620" class="absolute -z-10 max-h-full w-56 left-3" preserveAspectRatio="xMinYMin meet">
+<svg viewBox="-2 -5 70 620" class="absolute -z-10 max-h-full w-56 left-3 top-3" preserveAspectRatio="xMinYMin meet">
   <path
     id="water"
     class="water delayed"
