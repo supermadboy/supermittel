@@ -24,15 +24,7 @@
 	});
 </script>
 
-<svg viewBox="-2 -5 70 620" class="absolute -z-10 max-h-full w-56 left-3 top-3" preserveAspectRatio="xMinYMin meet">
-  <path
-    id="water"
-    class="water delayed"
-    class:flows={tilt}
-    d="M 50 25 C 60 25 66 44 66 620"
-  >
-  </path>
-
+<svg viewBox="-1 0 18 34" width="50px">
   <g
     id="bottle"
     class="bottle"
@@ -68,29 +60,7 @@
 </svg>
 
 <style>
-
-  .water {
-    transition: all var(--transition-bottle-falling);
-
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 3;
-    stroke-dasharray: 620, 620;
-    stroke-dashoffset: 620;
-
-    @apply stroke-primary;
-  }
-
-  .water.flows {
-    stroke-dashoffset: 0;
-  }
-
   .bottle {
-    transition: var(--transition-bottle-falling) cubic-bezier(1, 0, 1, 1);
-    transform-origin: bottom right;
-    transform-box: fill-box;
-    transform: rotate(0);
-
     @apply stroke-black;
   }
 
@@ -111,7 +81,4 @@
     @apply stroke-black;
   }
 
-  .delayed {
-    transition-delay: var(--transition-bottle-delay);
-  }
 </style>

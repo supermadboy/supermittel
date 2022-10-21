@@ -1,19 +1,28 @@
-<script>
+<script >
+  /** @type {string} */
   export let title;
-  export let image;
+  
+  /** @type {any} */
+  export let image ;
+  
+  /** @type {string} */
   export let text;
+  
+  /** @type {string} */
   export let href;
 </script>
 
 <div class="w-auto sm:w-120">
-  <a class="flex mb-2" {href} target="_blank">
+  <a class="hover:font-bold" {href} target="_blank">
+    <div class="flex mb-2" >
     <p class="underline mr-1">{title}</p>
     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+      <path stroke-width="2" fill="currentColor" d="M 14 4 V 5 H 18.3 L 8.3 15 L 9 15.7 L 19 5.7 V 10 H 20 V 4 M 19 19 H 5 V 5 H 12 V 4 H 5 C 4 4 4 4 4 5 V 19 A 1 1 0 0 0 5 20 H 19 A 1 1 0 0 0 20 19 V 12 H 19 V 19 Z" />
     </svg>
-  </a>
-  <div class="mb-2">
+  </div>
+  <div class="mb-4">
     <svelte:component this={image}/>
   </div>
+</a>
   <p class="text-sm md:text-base">{text}</p>
 </div>

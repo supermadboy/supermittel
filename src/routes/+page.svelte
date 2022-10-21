@@ -1,12 +1,14 @@
 <script>
-  import "./styles/tailwind.css";
-  import "./styles/font.css";
-  import "./styles/globals.css";
-	import Logo from './components/Logo.svelte';
-	import Background from './components/Background.svelte';
-	import Wave from './components/Wave.svelte';
-	import Content from './components/Content.svelte';
+  import "../styles/tailwind.css";
+  import "../styles/font.css";
+  import "../styles/globals.css";
+	import Logo from '../components/Logo.svelte';
+	import Background from '../components/Background.svelte';
+	import Wave from '../components/Wave.svelte';
+	import Content from '../components/Content.svelte';
 	import { onMount } from 'svelte';
+
+	export const prerender = true;
 
 	let tilt = false;
   let content;
@@ -32,22 +34,26 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Supermittel</title>
+</svelte:head>
 
 <Logo bind:tilt></Logo>
 
 <nav
 	id="nav"
-	class="flex sticky top-6 md:top-12 justify-end mx-6 md:mx-12 z-10"
+	class="flex sticky top-4 md:top-6 justify-end mx-6 md:mx-12 z-10"
 >
 
 	<button
-		class="underline md:text-2xl mr-3"
+		class="hover:underline md:text-2xl mr-6"
+		class:font-bold="{tilt}"
 		on:click="{toggleTilt}"
 	>
 		Projekte
 	</button>
 	<button
-		class="underline md:text-2xl"
+		class="hover:underline md:text-2xl"
 		on:click="{scrollToBottom}"
 	>
 		About
@@ -58,10 +64,12 @@
 <main class="min-h-full flex flex-col flex-grow overflow-hidden relative">
 	<Background></Background>
 
-	<div class="mb-28 p-4 max-w-5xl w-full mx-auto">
+	<div class="mb-40 p-4 max-w-5xl w-full mx-auto">
 		<p class="text-sm md:text-base">
-			Supermittel ist ein Kleinunternehmen in Konstanz welches ehrenamtlich lokale Projekte unterstützt. Gerne machen wir Website und Gestaltung, falls
-			du interessiert bist melde dich doch einfach bei uns unter: <a href="mailto:contact@supermittel.com" class="underline">contact@supermittel.com</a>.
+			<b>Supermittel</b> ist ein Kleinunternehmen in Konstanz, das ehrenamtlich soziale Projekte unterstützt.
+			Gerne beraten wir dich zu deinen Fragen rund um das Thema Digitalisierung und kümmern uns um die Programmierung deiner Website.
+			Bei Bedarf können wir dich auch bei der visuellen Gestaltung unterstützen.
+			Falls du Interesse hast, melde dich einfach unverbindlich unter: <a href="mailto:markus@supermittel.com" class="underline">markus@supermittel.com</a>.
 		</p>
 	</div>
 
